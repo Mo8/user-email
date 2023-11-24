@@ -26,7 +26,7 @@ public class UserController {
     public User createUser(@RequestBody User user) {
         System.out.println("Create user: " + user);
         user.setStatus(Status.INACTIF);
-        user.setValidationCode(String.valueOf(generateCode()));
+        user.setValidationCode(generateCode());
         User createdUser = userRepository.save(user);
         rabbitTemplate.convertAndSend("user-email", createdUser);
         return createdUser;

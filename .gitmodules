@@ -1,0 +1,4 @@
+[submodule "email-user"]
+	path = email-user
+	url = https://github.com/Mo8/email-user.git
+	branch = main
